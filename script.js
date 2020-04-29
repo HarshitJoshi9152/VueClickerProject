@@ -1,11 +1,14 @@
 Vue.component("button-counter", {
 	data: function() {
 		let obj = {
-			counter:0
+			counter:0,
+			clicked: () => {
+				++this.counter
+			}
 		}
 		return obj;
 	},
-	template: "<button v-on:click=\"++counter\">{{ counter }} Times Pressed</button>"
+	template: "<button v-on:click=\"clicked\">{{ counter }} Times Pressed</button>"
 })
 
 const app = new Vue({
